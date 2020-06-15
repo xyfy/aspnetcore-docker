@@ -3,6 +3,8 @@ WORKDIR /app
 COPY sources.list /app/sources.list
 RUN rm -f /etc/apt/sources.list && mv sources.list /etc/apt/ 
 RUN apt-get update -y && apt-get install -y curl libgdiplus && apt-get clean && ln -s /usr/lib/libgdiplus.so /usr/lib/gdiplus.dll
-# 时区设置
+# clear the apt cache
+RUN rm -rf /var/lib/apt/lists/ 
+# timezone clear
 ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
