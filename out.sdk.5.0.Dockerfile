@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster-slim AS base
+FROM mcr.microsoft.com/dotnet/core/sdk:5.0-buster-slim AS base
 WORKDIR /app
 RUN apt-get update -y && apt-get install -y curl libgdiplus && apt-get clean && ln -s /usr/lib/libgdiplus.so /usr/lib/gdiplus.dll
 # clear the apt cache
