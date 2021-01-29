@@ -18,4 +18,6 @@ Sdk: `yungongchang/dotnet5.0-sdk`
 
 Sdk_WITH_NODEJS_Gulp: `yungongchang/dotnet5.0-sdk-withnodejs`
 
+处理了dotnet5.0sdk的错误
+
 updated at 2021-01-07
