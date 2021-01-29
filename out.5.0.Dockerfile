@@ -1,6 +1,6 @@
 #境外服务器专用
 
-FROM mcr.microsoft.com/dotnet/aspnet:5.0.102-ca-patch-buster-slim AS base
+FROM mcr.microsoft.com/dotnet/aspnet:5.0-buster-slim AS base
 WORKDIR /app
 RUN apt-get update -y && apt-get install -y curl libgdiplus && apt-get clean && ln -s /usr/lib/libgdiplus.so /usr/lib/gdiplus.dll
 # clear the apt cache
