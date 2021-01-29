@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:5.0-buster-slim AS base
+FROM mcr.microsoft.com/dotnet/sdk:5.0.102-ca-patch-buster-slim AS base
 # Prevent 'Warning: apt-key output should not be parsed (stdout is not a terminal)'
 ENV APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1
 # install NodeJS 12.x

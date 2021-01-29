@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/aspnet:5.0-buster-slim AS base
+FROM mcr.microsoft.com/dotnet/aspnet:5.0.102-ca-patch-buster-slim AS base
 WORKDIR /app
 COPY sources.list /app/sources.list
 RUN rm -f /etc/apt/sources.list && mv sources.list /etc/apt/ 
