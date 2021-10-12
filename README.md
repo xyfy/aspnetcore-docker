@@ -18,9 +18,8 @@ Sdk: `yungongchang/dotnet5.0-sdk`
 
 Sdk_WITH_NODEJS_Gulp: `yungongchang/dotnet5.0-sdk-withnodejs`
 
-处理了dotnet5.0sdk的错误
-
-updated at 2021-01-07
+- 处理了dotnet5.0sdk的错误 updated at 2021-01-07
+- 更换为.net 5.0为alpine镜像
 
 ```bash
 docker build -t yungongchang/yarnwithvue -f yarnwithvue.Dockerfile .
