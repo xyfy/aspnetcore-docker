@@ -1,12 +1,16 @@
-FROM mcr.microsoft.com/dotnet/sdk:5.0.102-ca-patch-buster-slim AS base
-# Prevent 'Warning: apt-key output should not be parsed (stdout is not a terminal)'
-ENV APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1
-RUN apt-get update -yq && apt-get upgrade -yq && apt-get install -yq curl
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
-RUN apt-get install -y nodejs
+FROM mcr.microsoft.com/dotnet/sdk:5.0-alpine AS base
+RUN apk update && apk upgrade
+RUN apk add --update nodejs npm
 RUN npm install -g gulp
-# clear the apt cache
-RUN rm -rf /var/lib/apt/lists/ 
+# install libgdiplus for System.Drawing
+RUN apk add libgdiplus --update-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ --allow-untrusted
+RUN apk add terminus-font
+#debian底下
+#RUN apt-get update -y && apt-get install -y curl libgdiplus && apt-get clean && ln -s /usr/lib/libgdiplus.so /usr/lib/gdiplus.dll
 # timezone clear
+RUN apk add tzdata
 ENV TZ=Asia/Shanghai
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN cp /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+#根据文档https://wiki.alpinelinux.org/wiki/Setting_the_timezone是应该可以执行下面的命令的，实际发现删除的话，以上时区设置不能生效
+#RUN apk del tzdata
+RUN rm -rf /var/cache/apk/*
