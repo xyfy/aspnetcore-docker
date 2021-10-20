@@ -13,4 +13,7 @@ ENV TZ=Asia/Shanghai
 RUN cp /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 #根据文档https://wiki.alpinelinux.org/wiki/Setting_the_timezone是应该可以执行下面的命令的，实际发现删除的话，以上时区设置不能生效
 #RUN apk del tzdata
+# start fixed the sqlclient connect err in alpine only
+RUN apk add icu-libs
+ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
 RUN rm -rf /var/cache/apk/*

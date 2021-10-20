@@ -7,6 +7,10 @@ RUN apk add terminus-font
 #debian底下
 #RUN apt-get update -y && apt-get install -y curl libgdiplus && apt-get clean && ln -s /usr/lib/libgdiplus.so /usr/lib/gdiplus.dll
 # timezone clear
+# start fixed the sqlclient connect err in alpine only
+RUN apk add icu-libs
+ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
+
 RUN apk add tzdata
 RUN ls /usr/share/zoneinfo
 ENV TZ=Asia/Shanghai
