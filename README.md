@@ -56,4 +56,6 @@ docker push registry.cn-shenzhen.aliyuncs.com/yungongchang/dotnet5.0-sdk-withnod
 docker build -t registry.cn-shenzhen.aliyuncs.com/yungongchang/dotnet5.0-base -f 5.0.Dockerfile .
 docker push registry.cn-shenzhen.aliyuncs.com/yungongchang/dotnet5.0-base
 
+docker build -t registry.cn-shenzhen.aliyuncs.com/yungongchang/yarnwithvue -f yarnwithvue.Dockerfile .
+docker push registry.cn-shenzhen.aliyuncs.com/yungongchang/yarnwithvue
 ```
