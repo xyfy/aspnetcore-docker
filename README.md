@@ -43,3 +43,17 @@ docker push yungongchang/dotnet5.0-sdk-withnodejs
 docker build -t yungongchang/out-dotnet5.0-sdk-withnodejs -f out.sdk.5.0.withNodejs.Dockerfile .
 docker push yungongchang/out-dotnet5.0-sdk-withnodejs
 ```
+
+``` bash
+docker login --username=admin@1333813172155712 registry.cn-shenzhen.aliyuncs.com
+
+docker build -t registry.cn-shenzhen.aliyuncs.com/yungongchang/dotnet5.0-sdk -f sdk.5.0.Dockerfile .
+docker push registry.cn-shenzhen.aliyuncs.com/yungongchang/dotnet5.0-sdk
+
+docker build -t registry.cn-shenzhen.aliyuncs.com/yungongchang/dotnet5.0-sdk-withnodejs -f sdk.5.0.withNodejs.Dockerfile .
+docker push registry.cn-shenzhen.aliyuncs.com/yungongchang/dotnet5.0-sdk-withnodejs
+
+docker build -t registry.cn-shenzhen.aliyuncs.com/yungongchang/dotnet5.0-base -f 5.0.Dockerfile .
+docker push registry.cn-shenzhen.aliyuncs.com/yungongchang/dotnet5.0-base
+
+```
