@@ -59,4 +59,3 @@ docker push registry.cn-shenzhen.aliyuncs.com/yungongchang/dotnet5.0-base
 docker build -t registry.cn-shenzhen.aliyuncs.com/yungongchang/yarnwithvue -f yarnwithvue.Dockerfile .
 docker push registry.cn-shenzhen.aliyuncs.com/yungongchang/yarnwithvue
 ```
-Welcome@YGCygc8686
