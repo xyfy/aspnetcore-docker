@@ -43,6 +43,11 @@ docker push yungongchang/dotnet5.0-sdk-withnodejs
 docker build -t yungongchang/out-dotnet5.0-sdk-withnodejs -f out.sdk.5.0.withNodejs.Dockerfile .
 docker push yungongchang/out-dotnet5.0-sdk-withnodejs
 
+docker build -t yungongchang/dotnet2.2-sdk-withnodejs -f sdk.2.2.withNodejs.Dockerfile .
+docker push yungongchang/dotnet2.2-sdk-withnodejs
+
+docker build -t yungongchang/dotnet2.2-base -f 2.2.Dockerfile .
+docker push yungongchang/dotnet2.2-base
 ```
 
 ``` bash
@@ -60,8 +65,8 @@ docker push registry.cn-shenzhen.aliyuncs.com/yungongchang/dotnet5.0-base
 docker build -t registry.cn-shenzhen.aliyuncs.com/yungongchang/yarnwithvue -f yarnwithvue.Dockerfile .
 docker push registry.cn-shenzhen.aliyuncs.com/yungongchang/yarnwithvue
 
-docker build -t yungongchang/dotnet2.2-sdk-withnodejs -f sdk.2.2.withNodejs.Dockerfile .
-docker push yungongchang/dotnet2.2-sdk-withnodejs
+docker build -t registry.cn-shenzhen.aliyuncs.com/yungongchang/dotnet2.2-sdk-withnodejs -f sdk.2.2.withNodejs.Dockerfile .
+docker push registry.cn-shenzhen.aliyuncs.com/yungongchang/dotnet2.2-sdk-withnodejs
 
 docker build -t registry.cn-shenzhen.aliyuncs.com/yungongchang/dotnet2.2-base -f 2.2.Dockerfile .
 docker push registry.cn-shenzhen.aliyuncs.com/yungongchang/dotnet2.2-base

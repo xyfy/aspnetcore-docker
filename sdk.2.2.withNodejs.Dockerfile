@@ -3,6 +3,7 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 RUN apk update && apk upgrade
 RUN apk add --update nodejs npm
 RUN npm install -g gulp
+RUN apk add yarn
 # install libgdiplus for System.Drawing
 RUN apk add libgdiplus --update-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ --allow-untrusted
 RUN apk add terminus-font
